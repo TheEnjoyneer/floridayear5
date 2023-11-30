@@ -1,7 +1,7 @@
 # Christopher Brant
-# linearTopo.py
-# Linear Topology Script
-# - Executes Creation of Linear Topology
+# starRingTopo.py
+# Star-Ring Hybrid Topology Script
+# - Executes Creation of Star-Ring Topology
 # - Executes data and metric collection for topological analysis
 
 from mininet.cli import CLI
@@ -12,8 +12,8 @@ from mininet.node import OVSSwitch, Controller, Host
 from mininet.util import pmonitor
 
 
-class LinearTopo(Topo):
-    "Linear topology by Christopher Brant."
+class StarRingTopo(Topo):
+    "Star-Ring topology by Christopher Brant."
 
     def __init__(self):
         # Initialize topology
@@ -53,12 +53,12 @@ class LinearTopo(Topo):
         self.addLink(h8, s4)
 
 
-topos = {"lineartopo": (lambda: LinearTopo())}
+topos = {"starringtopo": (lambda: StarRingTopo())}
 
 
 def run():
     # Configure the network with custom topology
-    topo = LinearTopo()
+    topo = StarRingTopo()
     c0 = Controller("c0")
     net = Mininet(topo=topo, controller=c0, switch=OVSSwitch)
 

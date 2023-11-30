@@ -1,7 +1,7 @@
-# Christopher Brant
-# linearTopo.py
-# Linear Topology Script
-# - Executes Creation of Linear Topology
+# YOUR NAME HERE
+# FILE NAME HERE
+# TOPO_TYPE Topology Script
+# - Executes Creation of TOPO_TYPE Topology
 # - Executes data and metric collection for topological analysis
 
 from mininet.cli import CLI
@@ -11,7 +11,7 @@ from mininet.topo import Topo
 from mininet.node import OVSSwitch, Controller, Host
 from mininet.util import pmonitor
 
-
+# RENAME YOUR TOPOLOGY HERE AND GIVE IT YOUR NAME
 class LinearTopo(Topo):
     "Linear topology by Christopher Brant."
 
@@ -53,11 +53,13 @@ class LinearTopo(Topo):
         self.addLink(h8, s4)
 
 
+# CHANGE THIS NAME HERE
 topos = {"lineartopo": (lambda: LinearTopo())}
 
 
 def run():
     # Configure the network with custom topology
+    # CHANGE THE TOPOLOGY NAME HERE
     topo = LinearTopo()
     c0 = Controller("c0")
     net = Mininet(topo=topo, controller=c0, switch=OVSSwitch)
@@ -65,6 +67,8 @@ def run():
     # Start the network
     net.start()
 
+
+	# ADD ALL HOST NODES IN YOUR NETWORK HERE
     # Get necessary nodes for running commands
     h1 = net.get("h1")
     h2 = net.get("h2")
@@ -79,6 +83,7 @@ def run():
     # print("\nRunning 'iperf' server on h1\n")
     h1.sendCmd("iperf3 -s")
 
+	# ADD ALL HOST NODES IN YOUR NETWORK TO THIS LIST
     hosts = [h2, h3, h4, h5, h6, h7, h8]
     for i in range(len(hosts)):
         pingResp = hosts[i].cmd('ping -c1 10.0.0.1')
