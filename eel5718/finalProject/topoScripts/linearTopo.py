@@ -76,7 +76,7 @@ def run():
     h8 = net.get("h8")
 
     # Run iperf commands
-    # print("\nRunning 'iperf' server on h1\n")
+    print("\nRunning Linear Topology Metrics\n")
     h1.sendCmd("iperf3 -s")
 
     hosts = [h2, h3, h4, h5, h6, h7, h8]

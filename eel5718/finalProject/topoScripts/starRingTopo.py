@@ -35,22 +35,19 @@ class StarRingTopo(Topo):
         s3 = self.addSwitch("s3", cls=OVSSwitch)
         s4 = self.addSwitch("s4", cls=OVSSwitch)
 
-        # FOR TEMPLATE HERE IS WHERE YOU'LL CREATE YOUR TOPO
-        # BY ADDING THE CORRECT LINKS AND CONNECTIONS BETWEENE ALL THE HOSTS
-        # AND SWITCHES AS NECESSARY FOR YOUR TOPO
-
         # Add links
         self.addLink(h1, s1)
-        self.addLink(h2, s1)
-        self.addLink(s1, s2)
-        self.addLink(h3, s2)
-        self.addLink(h4, s2)
-        self.addLink(s2, s3)
+        self.addLink(h2, s2)
+        self.addLink(s1, h3)
+        self.addLink(h3, s4)
+        self.addLink(h3, h5)
+        self.addLink(s2, h4)
+        self.addLink(h4, h6)
         self.addLink(h5, s3)
-        self.addLink(h6, s3)
-        self.addLink(s3, s4)
-        self.addLink(h7, s4)
-        self.addLink(h8, s4)
+        self.addLink(s3, h7)
+        self.addLInk(h5, h6)
+        self.addLink(h6, s4)
+        self.addLink(s4, h8)
 
 
 topos = {"starringtopo": (lambda: StarRingTopo())}
@@ -76,7 +73,7 @@ def run():
     h8 = net.get("h8")
 
     # Run iperf commands
-    # print("\nRunning 'iperf' server on h1\n")
+    print("\nRunning Star-Ring Topology Metrics\n")
     h1.sendCmd("iperf3 -s")
 
     hosts = [h2, h3, h4, h5, h6, h7, h8]
