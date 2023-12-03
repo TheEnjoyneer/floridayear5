@@ -114,7 +114,7 @@ def run():
     print("\nRunning Star-Ring Topology Metrics\n")
     h1.sendCmd("iperf3 -s")
 
-    hosts = [h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16]
+    hosts = [h2, h3, h5, h7, h9, h11, h13, h15]
     for i in range(len(hosts)):
         pingResp = hosts[i].cmd('ping -c1 10.0.0.1')
         iperfResp = hosts[i].cmd('iperf3 -c 10.0.0.1 -u')
