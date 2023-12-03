@@ -10,8 +10,11 @@ from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.node import OVSSwitch, Controller, Host
 from mininet.util import pmonitor
+import time
 
 # RENAME YOUR TOPOLOGY HERE AND GIVE IT YOUR NAME
+
+
 class LinearTopo(Topo):
     "Linear topology by Christopher Brant."
 
@@ -67,8 +70,7 @@ def run():
     # Start the network
     net.start()
 
-
-	# ADD ALL HOST NODES IN YOUR NETWORK HERE
+    # ADD ALL HOST NODES IN YOUR NETWORK HERE
     # Get necessary nodes for running commands
     h1 = net.get("h1")
     h2 = net.get("h2")
@@ -79,11 +81,13 @@ def run():
     h7 = net.get("h7")
     h8 = net.get("h8")
 
+    time.sleep(30)
+
     # Run iperf commands
     # print("\nRunning 'iperf' server on h1\n")
     h1.sendCmd("iperf3 -s")
 
-	# ADD ALL HOST NODES IN YOUR NETWORK TO THIS LIST
+    # ADD ALL HOST NODES IN YOUR NETWORK TO THIS LIST
     hosts = [h2, h3, h4, h5, h6, h7, h8]
     for i in range(len(hosts)):
         pingResp = hosts[i].cmd('ping -c1 10.0.0.1')
