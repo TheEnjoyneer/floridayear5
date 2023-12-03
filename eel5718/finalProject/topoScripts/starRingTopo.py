@@ -110,9 +110,6 @@ def run():
 
     time.sleep(30)
 
-    net.pingAll()
-
-    exit(1)
     # Run iperf commands
     print("\nRunning Star-Ring Topology Metrics\n")
     h1.sendCmd("iperf3 -s")
