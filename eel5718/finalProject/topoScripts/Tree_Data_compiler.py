@@ -112,7 +112,7 @@ def run():
     h1.sendCmd("iperf3 -s")
 
     # ADD ALL HOST NODES IN YOUR NETWORK TO THIS LIST
-    hosts = [h1, h3, h5, h7,h9,h11,h13]
+    hosts = [h2, h3, h5, h7,h9,h11,h13]
     for i in range(len(hosts)):
         pingResp = hosts[i].cmd('ping -c1 10.0.0.1')
         iperfResp = hosts[i].cmd('iperf3 -c 10.0.0.1 -u')
