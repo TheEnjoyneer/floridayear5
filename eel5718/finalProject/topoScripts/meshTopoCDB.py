@@ -1,16 +1,15 @@
-# starTopo.py
+# meshTopo.py
 
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.net import Mininet
 from mininet.topo import Topo
-from mininet.node import OVSSwitch, Controller, Host
+from mininet.node import OVSSwitch, Controller, Host, OVSBridge
 from mininet.util import pmonitor
 import time
 
 
-class StarTopo(Topo):
-    "Star topology by Jose Caceres."
+class MeshTopo(Topo):
 
     def __init__(self):
         # Initialize topology
@@ -27,33 +26,39 @@ class StarTopo(Topo):
         h8 = self.addHost("h8", ip="10.0.0.8/24")
 
         # Add switches
-        s1 = self.addSwitch("s1", cls=OVSSwitch)
-        s2 = self.addSwitch("s2", cls=OVSSwitch)
-        s3 = self.addSwitch("s3", cls=OVSSwitch)
-        s4 = self.addSwitch("s4", cls=OVSSwitch)
+        s1 = self.addSwitch("s1", cls=OVSBridge)
+        s2 = self.addSwitch("s2", cls=OVSBridge)
+        s3 = self.addSwitch("s3", cls=OVSBridge)
+        s4 = self.addSwitch("s4", cls=OVSBridge)
 
-        # Add links from center switch
-        self.addLink(h1, s1)
-        self.addLink(h2, s1)
-        self.addLink(s1, s2)
-        self.addLink(s1, s3)
-        self.addLink(s1, s4)
-        # Add links onto outer switches
-        self.addLink(h3, s2)
-        self.addLink(h4, s2)
-        self.addLink(h5, s3)
-        self.addLink(h6, s3)
-        self.addLink(h7, s4)
-        self.addLink(h8, s4)
+        # Add Links
+        self.addLink(h1, s1, stp=True)
+        self.addLink(h2, s1, stp=True)
+
+        self.addLink(h3, s2, stp=True)
+        self.addLink(h4, s2, stp=True)
+
+        self.addLink(h5, s3, stp=True)
+        self.addLink(h6, s3, stp=True)
+
+        self.addLink(h7, s4, stp=True)
+        self.addLink(h8, s4, stp=True)
+
+        self.addLink(s1, s2, stp=True)
+        self.addLink(s1, s3, stp=True)
+        self.addLink(s1, s4, stp=True)
+        self.addLink(s2, s3, stp=True)
+        self.addLink(s2, s4, stp=True)
+        self.addLink(s3, s4, stp=True)
 
 
 # CHANGE THIS NAME HERE
-topos = {"startopo": (lambda: StarTopo())}
+topos = {"meshtopo": (lambda: MeshTopo())}
 
 
 def run():
     # Configure the network with custom topology
-    topo = StarTopo()
+    topo = MeshTopo()
     c0 = Controller("c0")
     net = Mininet(topo=topo, controller=c0, switch=OVSSwitch)
 
