@@ -1,5 +1,5 @@
 # Jose Eduardo Caceres
-# meshTopology.py
+# meshTopo.py
 # Mesh Topology Script
 # - Executes Creation of Mesh Topology
 # - Executes data and metric collection for topological analysis
@@ -11,8 +11,6 @@ from mininet.topo import Topo
 from mininet.node import OVSSwitch, Controller, Host, OVSBridge
 from mininet.util import pmonitor
 import time
-
-# RENAME YOUR TOPOLOGY HERE AND GIVE IT YOUR NAME
 
 
 class MeshTopo(Topo):
@@ -38,10 +36,6 @@ class MeshTopo(Topo):
         s3 = self.addSwitch("s3", cls=OVSBridge, stp=True)
         s4 = self.addSwitch("s4", cls=OVSBridge, stp=True)
 
-        # FOR TEMPLATE HERE IS WHERE YOU'LL CREATE YOUR TOPO
-        # BY ADDING THE CORRECT LINKS AND CONNECTIONS BETWEENE ALL THE HOSTS
-        # AND SWITCHES AS NECESSARY FOR YOUR TOPO
-
         # Add links
         self.addLink(h1, s1,  stp=True)
         self.addLink(h2, s1,  stp=True)
@@ -60,13 +54,11 @@ class MeshTopo(Topo):
         self.addLink(s3, s4,  stp=True)
 
 
-# CHANGE THIS NAME HERE
 topos = {"meshtopo": (lambda: MeshTopo())}
 
 
 def run():
     # Configure the network with custom topology
-    # CHANGE THE TOPOLOGY NAME HERE
     topo = MeshTopo()
     c0 = Controller("c0")
     net = Mininet(topo=topo, controller=c0, switch=OVSSwitch)
@@ -74,7 +66,6 @@ def run():
     # Start the network
     net.start()
 
-    # ADD ALL HOST NODES IN YOUR NETWORK HERE
     # Get necessary nodes for running commands
     h1 = net.get("h1")
     h2 = net.get("h2")
@@ -91,7 +82,6 @@ def run():
     # print("\nRunning 'iperf' server on h1\n")
     h1.sendCmd("iperf3 -s")
 
-    # ADD ALL HOST NODES IN YOUR NETWORK TO THIS LIST
     hosts = [h2, h3, h4, h5, h6, h7, h8]
     for i in range(len(hosts)):
         pingResp = hosts[i].cmd('ping -c1 10.0.0.1')
