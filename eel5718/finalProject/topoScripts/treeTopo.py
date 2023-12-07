@@ -8,15 +8,15 @@ from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.net import Mininet
 from mininet.topo import Topo
-from mininet.node import OVSSwitch, Controller, Host, OVSBridge
+from mininet.node import OVSSwitch, Controller, Host
 from mininet.util import pmonitor
 import time
 
 # RENAME YOUR TOPOLOGY HERE AND GIVE IT YOUR NAME
 
 
-class ring_topo(Topo):
-    "ring topology example."
+class tree_topo(Topo):
+    "tree topology example."
 
     def __init__(self):
         "Create custom topo."
@@ -34,38 +34,55 @@ class ring_topo(Topo):
         h7 = self.addHost('h7')
         h8 = self.addHost('h8')
         
-
-        s1 = self.addSwitch('s1', cls=OVSBridge, stp=True)
-        s2 = self.addSwitch('s2', cls=OVSBridge, stp=True)
-        s3 = self.addSwitch('s3', cls=OVSBridge, stp=True)
-        s4 = self.addSwitch('s4', cls=OVSBridge, stp=True)
-
+        #to create 2 hosts per switch
+        h9 = self.addHost('h9')
+        h10 = self.addHost('h10')
+        h11 = self.addHost('h11')
+        h12 = self.addHost('h12')
+        h13 = self.addHost('h13')
+        h14 = self.addHost('h14')
+        
+        s1 = self.addSwitch('s1')
+        s2 = self.addSwitch('s2')
+        s3 = self.addSwitch('s3')
+        s4 = self.addSwitch('s4')
+        s5 = self.addSwitch('s5')
+        s6 = self.addSwitch('s6')
+        s7 = self.addSwitch('s7')
 
         # Add links
         
-        self.addLink(s1, h1)
-        self.addLink(s1, h2)
-        self.addLink(s1, s2,stp=True)
+        self.addLink(s1, s2)
+        self.addLink(s1, s3)
+        self.addLink(s1, h9)
+        self.addLink(s1, h10)
         
-        self.addLink(s2, h3)
-        self.addLink(s2, h4)
-        self.addLink(s2, s3,stp=True)
+        self.addLink(s2, s4)
+        self.addLink(s2, s5)
+        self.addLink(s2, h11)
+        self.addLink(s2, h12)
         
-        self.addLink(s3, h5)
-        self.addLink(s3, h6)
-        self.addLink(s3, s4,stp=True)        
+        self.addLink(s3, s6)
+        self.addLink(s3, s7)
+        self.addLink(s3, h13)
+        self.addLink(s2, h14)        
         
-        self.addLink(s4, h7)
-        self.addLink(s4, h8)
-        self.addLink(s4, s1,stp=True)
+        self.addLink(s4, h1)
+        self.addLink(s4, h2)
+        self.addLink(s5, h3)
+        self.addLink(s5, h4)
+        self.addLink(s6, h5)
+        self.addLink(s6, h6)
+        self.addLink(s7, h7)
+        self.addLink(s7, h8)
         
-topos = {'ringtopo': (lambda: ring_topo())}
+topos = {'tree_topo': (lambda: tree_topo())}
 
 
 def run():
     # Configure the network with custom topology
     # CHANGE THE TOPOLOGY NAME HERE
-    topo = ring_topo()
+    topo = tree_topo()
     c0 = Controller("c0")
     net = Mininet(topo=topo, controller=c0, switch=OVSSwitch)
 
@@ -82,7 +99,12 @@ def run():
     h6 = net.get("h6")
     h7 = net.get("h7")
     h8 = net.get("h8")
-
+    h9 = net.get("h9")
+    h10 = net.get("h10")
+    h11= net.get("h11")
+    h12 = net.get("h12")
+    h13= net.get("h13")
+    h14 = net.get("h14")
     time.sleep(30)
 
     # Run iperf commands
@@ -90,7 +112,7 @@ def run():
     h1.sendCmd("iperf3 -s")
 
     # ADD ALL HOST NODES IN YOUR NETWORK TO THIS LIST
-    hosts = [h1, h3, h5, h7,]
+    hosts = [h2, h3, h5, h7,h9,h11,h13]
     for i in range(len(hosts)):
         pingResp = hosts[i].cmd('ping -c1 10.0.0.1')
         iperfResp = hosts[i].cmd('iperf3 -c 10.0.0.1 -u')
