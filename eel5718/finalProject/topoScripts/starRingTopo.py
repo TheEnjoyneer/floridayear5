@@ -118,7 +118,6 @@ def run():
     for i in range(len(hosts)):
         pingResp = hosts[i].cmd('ping -c1 10.0.0.1')
         iperfResp = hosts[i].cmd('iperf3 -c 10.0.0.1 -u')
-        print("\nGetting Stats between h1 and h" + str(i+2) + "\n")
         print(pingResp)
         print(iperfResp)
         # write to file

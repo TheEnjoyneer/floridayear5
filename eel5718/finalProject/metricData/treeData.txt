@@ -1,0 +1,189 @@
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=17.3 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 17.322/17.322/17.322/0.000 ms
+
+Connecting to host 10.0.0.1, port 5201
+[  5] local 10.0.0.2 port 39210 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   1.00-2.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   2.00-3.01   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   3.01-4.00   sec   127 KBytes  1.05 Mbits/sec  90  
+[  5]   4.00-5.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   5.00-6.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   6.00-7.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   7.00-8.01   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   8.01-9.00   sec   127 KBytes  1.05 Mbits/sec  90  
+[  5]   9.00-10.00  sec   130 KBytes  1.07 Mbits/sec  92  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.25 MBytes  1.05 Mbits/sec  0.000 ms  0/906 (0%)  sender
+[  5]   0.00-10.05  sec  1.25 MBytes  1.04 Mbits/sec  0.204 ms  0/906 (0%)  receiver
+
+iperf Done.
+
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=10.7 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 10.684/10.684/10.684/0.000 ms
+
+Connecting to host 10.0.0.1, port 5201
+[  5] local 10.0.0.3 port 46440 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   1.00-2.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   2.00-3.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   3.00-4.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   4.00-5.03   sec   119 KBytes   944 Kbits/sec  84  
+[  5]   5.03-6.00   sec   137 KBytes  1.16 Mbits/sec  97  
+[  5]   6.00-7.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   7.00-8.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   8.00-9.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   9.00-10.00  sec   129 KBytes  1.05 Mbits/sec  91  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.25 MBytes  1.05 Mbits/sec  0.000 ms  0/906 (0%)  sender
+[  5]   0.00-10.04  sec  1.25 MBytes  1.05 Mbits/sec  0.272 ms  0/906 (0%)  receiver
+
+iperf Done.
+
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=33.9 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 33.889/33.889/33.889/0.000 ms
+
+Connecting to host 10.0.0.1, port 5201
+[  5] local 10.0.0.5 port 50709 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   1.00-2.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   2.00-3.01   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   3.01-4.00   sec   127 KBytes  1.05 Mbits/sec  90  
+[  5]   4.00-5.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   5.00-6.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   6.00-7.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   7.00-8.00   sec   129 KBytes  1.06 Mbits/sec  91  
+[  5]   8.00-9.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   9.00-10.00  sec   129 KBytes  1.06 Mbits/sec  91  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.25 MBytes  1.05 Mbits/sec  0.000 ms  0/906 (0%)  sender
+[  5]   0.00-10.03  sec  1.25 MBytes  1.05 Mbits/sec  1.161 ms  0/906 (0%)  receiver
+
+iperf Done.
+
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=26.6 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 26.594/26.594/26.594/0.000 ms
+
+Connecting to host 10.0.0.1, port 5201
+[  5] local 10.0.0.7 port 51301 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   1.00-2.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   2.00-3.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   3.00-4.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   4.00-5.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   5.00-6.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   6.00-7.00   sec   124 KBytes  1.02 Mbits/sec  88  
+[  5]   7.00-8.00   sec   132 KBytes  1.08 Mbits/sec  93  
+[  5]   8.00-9.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   9.00-10.00  sec   129 KBytes  1.06 Mbits/sec  91  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.25 MBytes  1.05 Mbits/sec  0.000 ms  0/906 (0%)  sender
+[  5]   0.00-10.04  sec  1.25 MBytes  1.05 Mbits/sec  0.963 ms  0/906 (0%)  receiver
+
+iperf Done.
+
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=12.2 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12.178/12.178/12.178/0.000 ms
+
+Connecting to host 10.0.0.1, port 5201
+[  5] local 10.0.0.9 port 34932 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   1.00-2.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   2.00-3.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   3.00-4.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   4.00-5.00   sec   129 KBytes  1.06 Mbits/sec  91  
+[  5]   5.00-6.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   6.00-7.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   7.00-8.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   8.00-9.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   9.00-10.00  sec   129 KBytes  1.05 Mbits/sec  91  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.25 MBytes  1.05 Mbits/sec  0.000 ms  0/906 (0%)  sender
+[  5]   0.00-10.04  sec  1.25 MBytes  1.05 Mbits/sec  2.164 ms  0/906 (0%)  receiver
+
+iperf Done.
+
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=15.0 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 15.000/15.000/15.000/0.000 ms
+
+Connecting to host 10.0.0.1, port 5201
+[  5] local 10.0.0.11 port 42852 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   1.00-2.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   2.00-3.00   sec   129 KBytes  1.06 Mbits/sec  91  
+[  5]   3.00-4.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   4.00-5.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   5.00-6.00   sec   129 KBytes  1.06 Mbits/sec  91  
+[  5]   6.00-7.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   7.00-8.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   8.00-9.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   9.00-10.00  sec   129 KBytes  1.05 Mbits/sec  91  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.25 MBytes  1.05 Mbits/sec  0.000 ms  0/906 (0%)  sender
+[  5]   0.00-10.01  sec  1.25 MBytes  1.05 Mbits/sec  0.243 ms  0/906 (0%)  receiver
+
+iperf Done.
+
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=76.0 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 76.008/76.008/76.008/0.000 ms
+
+Connecting to host 10.0.0.1, port 5201
+[  5] local 10.0.0.13 port 52978 connected to 10.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.01   sec   129 KBytes  1.04 Mbits/sec  91  
+[  5]   1.01-2.00   sec   129 KBytes  1.06 Mbits/sec  91  
+[  5]   2.00-3.00   sec   126 KBytes  1.03 Mbits/sec  89  
+[  5]   3.00-4.00   sec   129 KBytes  1.06 Mbits/sec  91  
+[  5]   4.00-5.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   5.00-6.00   sec   129 KBytes  1.05 Mbits/sec  91  
+[  5]   6.00-7.00   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   7.00-8.01   sec   127 KBytes  1.04 Mbits/sec  90  
+[  5]   8.01-9.00   sec   129 KBytes  1.06 Mbits/sec  91  
+[  5]   9.00-10.00  sec   129 KBytes  1.05 Mbits/sec  91  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  1.25 MBytes  1.05 Mbits/sec  0.000 ms  0/906 (0%)  sender
+[  5]   0.00-10.04  sec  1.25 MBytes  1.04 Mbits/sec  1.704 ms  0/906 (0%)  receiver
+
+iperf Done.
+
